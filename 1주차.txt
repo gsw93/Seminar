@@ -1,0 +1,70 @@
+git - git 설치 유무 확인
+pwd - 자기 위치 확인
+init - 현재 디렉토리를 git 저장소로 사용하겠다고 알려주는 명령어
+ls -al - 현재 디렉토리의 파일 목록 확인
+.git - 버전 관리 하면서 생기는 여러 정보들이 저장되기때문에
+이 파일을 삭제하면 마지막에 저장한 파일을 제외하고 다 날라감.
+vim - 파일 수정, 생성
+cat - 파일 읽기
+git status - git 상태 확인 , untracked files 확인
+git add - git에게 추적할 파일을 지정하는 명령어
+git commit
+git commit -m ""
+
+
+버전에 포함될 버전을 만든 사람에 대한 정보를 설정 .
+이 설정은 ~/.gitconfig 파일에 저장ㄷ외고 1번만 해주면 됨.
+
+git config --global user.name "자신의 닉네임"
+git config --global user.email "자신의 이메일"
+
+cp f1.txt f2.txt -> f1.txt 파일 내용을 복사하여 f2.txt 파일 생성
+
+clear - 커맨드창 내용 다 지우기
+
+git add하면 커밋 대기상태로 감 > 이상태를 스테이지 에어리어라고 함
+git add 하면 스테이지 에어리어에 파일을 올리는 것임
+스테이지라는 개념과 레파지토리라는 개념을 가지고 있음
+커밋이 저장된 결과가 저장되는 곳이 레파지토리임
+
+git log -p - commit 이후의 소스코드 비교
+git diff - add 이전의 소스코드 비교
+
+
+git init 폴더명 -> git 저장소 바로 만들기
+git init --bare 폴더명 -> 원격 저장소 만들기
+
+git remote add origin 원격 저장소 주소 -> 주소를 origin이라는 별명으로 원격저장소를 등록하는 명령어
+git remote -v -> 원격저장소 확인
+git remote remove origin -> 원격저장소 해제
+
+
+git push -> 로컬 저장소의 해당 브랜치와 똑같은 브랜치를 원격저장소에 만들면서 push ! 
+
+git push --set-upstream origin master <-- 이 메시지는 현브렌치(git branch)를 오리진의 마스터브렌치로 푸쉬한다라는 뜻임
+마스터에서 깃푸쉬하면 자동으로 오리진의 마스터로 푸쉬하겠다(--set-upstream)의미
+원격저장소로 가서 git log를 해보면 > cd .. cd remote > git log
+이렇게 해서 지역저장소의 것을 원격저장소에 푸쉬해서 동기화 시키는 방법에 대해 살펴봤음.
+
+control + insert 복사
+shift + insert 붙여넣기
+
+
+
+
+git의 소스코드를 지역저장소로 가져오기
+
+git clone https://github.com/git/git.git
+
+로그를 거꾸로 출력하기
+
+git log --reverse
+
+git의 첫번째 커밋으로 체크아웃하기
+
+git checkout e83c5163316f89bfbde7d9ab23ca2e25604af290
+
+
+git push -u origin master (업로드) 마스터브랜치를 푸쉬하다 -u는 한번만 쓰면됨 로컬브랜치와 원격브랜치를 동기화 > 담부터는 > git push만 하면 자동으로 푸쉬시켜줌
+그렇게 하기위해 -u옵션을 사용한 것임
+
